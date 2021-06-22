@@ -97,9 +97,9 @@ describe("Engineer class", () => {
       // Arrange
       const obj = new Engineer("2", "Name", "name@email.com");
       // Act
-      const role = obj.getGithub();
+      const objGitHub = obj.getGithub();
       // Assert
-      expect(role).toEqual(obj.github);
+      expect(objGitHub).toEqual(obj.github);
       });
   });
 });

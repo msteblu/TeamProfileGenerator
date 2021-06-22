@@ -93,13 +93,13 @@ describe("Intern class", () => {
   });
 
   describe("Get School", () => {
-    it("getSchool method should return correct GitHub profile", () => {
+    it("getSchool method should return correct school", () => {
       // Arrange
       const obj = new Intern("3", "Name", "name@email.com");
       // Act
-      const role = obj.getSchool();
+      const objSchool = obj.getSchool();
       // Assert
-      expect(role).toEqual(obj.school);
+      expect(objSchool).toEqual(obj.school);
       });
   });
 });
