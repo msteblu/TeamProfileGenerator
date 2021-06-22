@@ -1,6 +1,7 @@
 const Manager = require("../lib/Manager");
 
 describe("Manager class", () => {
+  // Testing Manager Class
   describe("Initialization", () => {
     it("Manager object was created correctly", () => {
       // Arange
@@ -29,7 +30,7 @@ describe("Manager class", () => {
       // Assert
       expect(cb).toThrowError(err);
     });
-    // Exception test of email
+    // Exception tests of email
     it("Should throw an error if not provided text for email", () => {
       // Arrange
       const err = new Error("Expected parameter 'email' to be a non-empty string");
@@ -46,6 +47,7 @@ describe("Manager class", () => {
     });        
   });
   
+  // Testing getID method for Manager class
   describe("Get ID", () => {
     it("getID method should return correct id", () => {
     // Arrange
@@ -58,6 +60,7 @@ describe("Manager class", () => {
 
   });
 
+  // Testing getName method for Manager class
   describe("Get Name", () => {
     it("getName method should return correct name", () => {
       // Arrange
@@ -70,6 +73,7 @@ describe("Manager class", () => {
   
   });
 
+  // Testing getEmail method for Manager class
   describe("Get Email", () => {
     it("getEmail method should return correct email", () => {
       // Arrange
@@ -81,6 +85,7 @@ describe("Manager class", () => {
       });
   });
 
+  // Testing getRole method for Manager class
   describe("Get Role", () => {
     it("getRole method should return correct role", () => {
       // Arrange
@@ -92,6 +97,7 @@ describe("Manager class", () => {
       });
   });
 
+  // Testing getOfficeNumber method
   describe("Get Office Number", () => {
     it("getOfficeNumber method should return correct office number", () => {
       // Arrange

@@ -1,6 +1,7 @@
 const Employee = require("../lib/Employee");
 
 describe("Employee class", () => {
+  // Testing Employee Class
   describe("Initialization", () => {
     it("Employee object was created correctly", () => {
       // Arange
@@ -29,7 +30,7 @@ describe("Employee class", () => {
       // Assert
       expect(cb).toThrowError(err);
     });
-    // Exception test of email
+    // Exception tests of email
     it("Should throw an error if not provided text for email", () => {
       // Arrange
       const err = new Error("Expected parameter 'email' to be a non-empty string");
@@ -46,6 +47,7 @@ describe("Employee class", () => {
     });        
   });
   
+  // Testing getID method
   describe("Get ID", () => {
     it("getID method should return correct id", () => {
     // Arrange
@@ -58,6 +60,7 @@ describe("Employee class", () => {
 
   });
 
+  // Testing getName method
   describe("Get Name", () => {
     it("getName method should return correct name", () => {
       // Arrange
@@ -70,6 +73,7 @@ describe("Employee class", () => {
   
   });
 
+  // Testing getEmail method
   describe("Get Email", () => {
     it("getEmail method should return correct email", () => {
       // Arrange
@@ -81,6 +85,7 @@ describe("Employee class", () => {
       });
   });
 
+  // Testing getRole method
   describe("Get Role", () => {
     it("getRole method should return correct role", () => {
       // Arrange

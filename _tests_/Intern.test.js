@@ -1,6 +1,7 @@
 const Intern = require("../lib/Intern");
 
 describe("Intern class", () => {
+  // Testing Intern Class
   describe("Initialization", () => {
     it("Intern object was created correctly", () => {
       // Arange
@@ -29,7 +30,7 @@ describe("Intern class", () => {
       // Assert
       expect(cb).toThrowError(err);
     });
-    // Exception test of email
+    // Exception tests of email
     it("Should throw an error if not provided text for email", () => {
       // Arrange
       const err = new Error("Expected parameter 'email' to be a non-empty string");
@@ -46,6 +47,7 @@ describe("Intern class", () => {
     });        
   });
   
+  // Testing getID method for Intern class
   describe("Get ID", () => {
     it("getID method should return correct id", () => {
     // Arrange
@@ -58,6 +60,7 @@ describe("Intern class", () => {
 
   });
 
+  // Testing getName method for Intern class
   describe("Get Name", () => {
     it("getName method should return correct name", () => {
       // Arrange
@@ -70,6 +73,7 @@ describe("Intern class", () => {
   
   });
 
+  // Testing getEmail method for Intern class
   describe("Get Email", () => {
     it("getEmail method should return correct email", () => {
       // Arrange
@@ -81,6 +85,7 @@ describe("Intern class", () => {
       });
   });
 
+  // Testing getRole method for Intern class
   describe("Get Role", () => {
     it("getRole method should return correct role", () => {
       // Arrange
@@ -92,6 +97,7 @@ describe("Intern class", () => {
       });
   });
 
+  // Testing getSchool method
   describe("Get School", () => {
     it("getSchool method should return correct school", () => {
       // Arrange

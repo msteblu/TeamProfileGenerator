@@ -1,6 +1,7 @@
 const Engineer = require("../lib/Engineer");
 
 describe("Engineer class", () => {
+  // Testing Engineer Class
   describe("Initialization", () => {
     it("Engineer object was created correctly", () => {
       // Arange
@@ -29,7 +30,7 @@ describe("Engineer class", () => {
       // Assert
       expect(cb).toThrowError(err);
     });
-    // Exception test of email
+    // Exception tests of email
     it("Should throw an error if not provided text for email", () => {
       // Arrange
       const err = new Error("Expected parameter 'email' to be a non-empty string");
@@ -46,6 +47,7 @@ describe("Engineer class", () => {
     });        
   });
   
+  // Testing getID method for Engineer class
   describe("Get ID", () => {
     it("getID method should return correct id", () => {
     // Arrange
@@ -58,6 +60,7 @@ describe("Engineer class", () => {
 
   });
 
+  // Testing getName method for Engineer class
   describe("Get Name", () => {
     it("getName method should return correct name", () => {
       // Arrange
@@ -70,6 +73,7 @@ describe("Engineer class", () => {
   
   });
 
+  // Testing getEmail method for Engineer class
   describe("Get Email", () => {
     it("getEmail method should return correct email", () => {
       // Arrange
@@ -81,6 +85,7 @@ describe("Engineer class", () => {
       });
   });
 
+  // Testing getRole method for Engineer class
   describe("Get Role", () => {
     it("getRole method should return correct role", () => {
       // Arrange
@@ -92,6 +97,7 @@ describe("Engineer class", () => {
       });
   });
 
+  // Testing getGithub method
   describe("Get GitHub", () => {
     it("getGithub method should return correct GitHub profile", () => {
       // Arrange
