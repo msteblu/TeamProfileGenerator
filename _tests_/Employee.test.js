@@ -1,126 +1,94 @@
 const Employee = require("../lib/Employee");
 
 describe("Employee class", () => {
-  // describe("Initialization", () => {
-  //   it("Employee id is equal to what is entered", () => {
-  //     const obj = new Employee();
-  //     expect("id" in obj).toBe();
-  //   });
-  // });
+  describe("Initialization", () => {
+    it("Employee object was created correctly", () => {
+      // Arange
+      let id = "1";
+      let name = "Name"
+      let email = "name@email.com"
+      const obj = new Employee(id, name, email);
+      // Assert
+      expect(obj.id).toEqual("1");
+      expect(obj.name).toEqual("Name");
+      expect(obj.email).toEqual("name@email.com");
+    });
+    // Exception test of id
+    it("Should throw an error if not provided text for id", () => {
+      // Arrange
+      const err = new Error("Expected parameter 'id' to be a non-empty string");
+      const cb = () => new Employee("", "Name", "name@email.com");
+      // Assert
+      expect(cb).toThrowError(err);
+    });
+    // Exception test of name
+    it("Should throw an error if not provided text for name", () => {
+      // Arrange
+      const err = new Error("Expected parameter 'name' to be a non-empty string");
+      const cb = () => new Employee("1", "", "name@email.com");
+      // Assert
+      expect(cb).toThrowError(err);
+    });
+    // Exception test of email
+    it("Should throw an error if not provided text for email", () => {
+      // Arrange
+      const err = new Error("Expected parameter 'email' to be a non-empty string");
+      const cb = () => new Employee("1", "Name", "");
+      // Assert
+      expect(cb).toThrowError(err);
+    });    
+    it("Should throw an error if email address is not formatted correctly", () => {
+      // Arrange
+      const err = new Error("Expected parameter 'email' to be in standard email address format");
+      const cb = () => new Employee("1", "Name", "email");
+      // Assert
+      expect(cb).toThrowError(err);
+    });        
+  });
   
-  describe("ID", () => {
+  describe("Get ID", () => {
+    it("getID method should return correct id", () => {
     // Arrange
-    const employee = new Employee();
-    const employeeId = "Employee";
-    
+    const obj = new Employee("1", "Name", "name@email.com");
     // Act
-    let id = employee.getId("Employee");
-
+    const id = obj.getId();
     // Assert
-    expect(id).toEqual(employeeId);
-  });
-
-  describe("Name", () => {
+    expect(id).toEqual(obj.id);
+    });
 
   });
 
-  describe("Email", () => {
-
+  describe("Get Name", () => {
+    it("getName method should return correct name", () => {
+      // Arrange
+      const obj = new Employee("1", "Name", "name@email.com");
+      // Act
+      const name = obj.getName();
+      // Assert
+      expect(name).toEqual(obj.name);
+      });
+  
   });
 
-  describe("Role", () => {
+  describe("Get Email", () => {
+    it("getEmail method should return correct email", () => {
+      // Arrange
+      const obj = new Employee("1", "Name", "name@email.com");
+      // Act
+      const email = obj.getEmail();
+      // Assert
+      expect(email).toEqual(obj.email);
+      });
+  });
 
+  describe("Get Role", () => {
+    it("getRole method should return correct role", () => {
+      // Arrange
+      const obj = new Employee("1", "Name", "name@email.com");
+      // Act
+      const role = obj.getRole();
+      // Assert
+      expect(role).toEqual("Employee");
+      });
   });
 });
-
-// EXAMPLES:
-// describe("Arithmetic", () => {
-//   describe("Initialization", () => {
-//     it("should return an object containing a 'number' property when called with the 'new' keyword", () => {
-//       const obj = new Arithmetic();
-
-//       expect("number" in obj).toEqual(true);
-//     });
-
-//     it("should set 'number' when created", () => {
-//       const num = 108;
-
-//       const obj = new Arithmetic(num);
-
-//       expect(obj.number).toEqual(num);
-//     });
-
-//     it("should default 'number' to 0", () => {
-//       const obj = new Arithmetic();
-
-//       expect(obj.number).toEqual(0);
-//     });
-//   });
-
-//   describe("plus", () => {
-//     it("should return a new 'Arithmetic' object", () => {
-//       const obj = new Arithmetic(3).plus(3);
-
-//       expect(obj instanceof Arithmetic).toEqual(true);
-//     });
-
-//     it("should return a new 'Arithmetic' object that has an updated 'number' value", () => {
-//       const num = 8;
-//       const added = 7;
-//       const sum = num + added;
-
-//       const { number } = new Arithmetic(num).plus(added);
-
-//       expect(number).toEqual(sum);
-//     });
-//   });
-
-//   describe("minus", () => {
-//     it("should return a new 'Arithmetic' object", () => {
-//       const obj = new Arithmetic(9).minus(4);
-
-//       expect(obj instanceof Arithmetic).toEqual(true);
-//     });
-
-//     it("should return a new 'Arithmetic' object that has an updated 'number' value", () => {
-//       const num = 10;
-//       const subtracted = 17;
-//       const difference = num - subtracted;
-
-//       const { number } = new Arithmetic(num).minus(subtracted);
-
-//       expect(number).toEqual(difference);
-//     });
-//   });
-
-//   describe("value", () => {
-//     it("should return the 'Arithmetic' object's 'number' value", () => {
-//       const num = 10;
-//       const obj = new Arithmetic(num);
-
-//       const result = obj.value();
-
-//       expect(result).toEqual(num);
-//     });
-//   });
-// });
-
-
-// describe("Letter class", () => {
-//     it("Characters that aren't digits or letters are instantly visible", () => {
-//       expect(new Letter("?").visible).toBe(true);
-//     });
-  
-//     it("toString returns _ for letters", () => {
-//       expect(new Letter("a").toString()).toBe("_");
-//     });
-  
-//     describe("guess", () => {
-//       it("Correct guess returns true", () => {
-//         expect(new Letter("j").guess("j")).toBe(true);
-//       });
-  
-//       it("Incorrect guess returns false", () => {
-//         expect(new Letter("j").guess("l")).toBe(false);
-//       });
-//     });
