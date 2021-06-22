@@ -100,7 +100,7 @@ const iterateInterns = (value) => {
 };
 
 const writeHTML = function () {
-  fs.writeFile(`dist/Test.html`, fileContent, (err) =>
+  fs.writeFile(`dist/team.html`, fileContent, (err) =>
                 err ? console.log(err) : console.log('Successfully wrote to Test.txt')
             );
 }
