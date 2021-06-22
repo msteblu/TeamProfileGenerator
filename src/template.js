@@ -33,7 +33,6 @@ let fileEnding = `          </div>
 </html>`;
 
 const createManagerCard = (manager) => {
-    console.log(manager);
   return `              <div class="card border-dark m-3 bg-warning" style="max-width: 18rem;">
                     <div class="text-center">
                         <div class="card-header h1"><strong>${manager.name}</strong></div>
@@ -49,7 +48,6 @@ const createManagerCard = (manager) => {
 };
 
 const createEngineerCard = (engineer) => {
-    console.log(engineer);
   return `              <div class="card border-dark m-3 bg-warning" style="max-width: 18rem;">
                     <div class="text-center">
                         <div class="card-header h1"><strong>${engineer.name}</strong></div>
@@ -101,7 +99,7 @@ const iterateInterns = (value) => {
 
 const writeHTML = function () {
   fs.writeFile(`dist/team.html`, fileContent, (err) =>
-                err ? console.log(err) : console.log('Successfully wrote to Test.txt')
+                err ? console.log(err) : console.log('Successfully wrote to team.html')
             );
 }
 
