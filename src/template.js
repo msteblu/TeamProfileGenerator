@@ -92,12 +92,10 @@ const createFullFile = () => {
 };
 
 const iterateEngineers = (value) => {
-  // fileContent.concat(createEngineerCard(value));
   fileContent = fileContent + createEngineerCard(value);
 };
 
 const iterateInterns = (value) => {
-  // fileContent.concat(createInternCard(value));
   fileContent = fileContent + createInternCard(value);
 };
 
